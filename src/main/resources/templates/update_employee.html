@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>EMS - Spring Boot &times; Thymeleaf</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <h1>Update  Employee</h1>
+  <hr>
+
+  <form th:action="@{/saveEmployee}"
+        th:object="${employee}" method="post">
+
+    <input type="hidden" th:field="*{id}">
+
+    <label for="firstName">First Name: </label>
+    <input type="text" th:field="*{firstName}" id="firstName"
+           placeholder="Employee First Name" disabled
+           class="form-control mb-4 col-4">
+
+    <label for="lastName">First Name: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"
+           placeholder="Employee Last Name" disabled
+           class="form-control mb-4 col-4">
+
+    <label for="email">First Name: </label>
+    <input type="text" th:field="*{email}" id="email"
+           placeholder="Employee Email ID" disabled
+           class="form-control mb-4 col-4">
+
+    <button type="submit" class="btn btn-warning col-2">
+      Update Employee
+    </button>
+
+  </form>
+
+  <hr>
+
+  <a th:href="@{/}">Back to Employee List</a>
+
+</div>
+
+</body>
+</html>

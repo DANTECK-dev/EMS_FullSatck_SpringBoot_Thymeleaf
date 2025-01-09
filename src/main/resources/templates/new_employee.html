@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>EMS - Spring Boot &times; Thymeleaf</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1>New Employee</h1>
+        <hr>
+
+        <form th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+            <input type="text" th:field="*{firstName}"
+                   placeholder="Employee First Name"
+                   class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{lastName}"
+                   placeholder="Employee Last Name"
+                   class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{email}"
+                   placeholder="Employee Email ID"
+                   class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2">
+                Save Employee
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
